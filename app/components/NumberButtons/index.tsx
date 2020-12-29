@@ -28,11 +28,12 @@ function index(props: ButtonsProps): JSX.Element {
   return (
     <View style={styles.container}>
       {props.buttons.map((row, xindex) => (
-        <View style={styles.containerRow}>
+        <View key={xindex+'row'} style={styles.containerRow}>
           {row.map((col, rindex) => (
             <TouchableNativeFeedback
+              key={rindex+'col'}
               onPress={() => _handleOnPress(col)}
-              background={TouchableNativeFeedback.SelectableBackground()}
+              background={TouchableNativeFeedback.Ripple('#0f0', true)}
             >
               <View style={styles.containerButton}>
                 <Text style={styles.txtDefalut}>{col}</Text>

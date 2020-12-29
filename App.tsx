@@ -15,15 +15,15 @@ export default function App() {
   return (
     <View style={styles.container}>
       <View style={styles.containerHistory}>
-        <HistoryView data={this.state._history} onClear={this._clearHistory} />
+        {/* <HistoryView data={this.state._history} onClear={this._clearHistory} /> */}
       </View>
       <View style={styles.containerOutput}>
         <View style={styles.placeHolderOutput}>
-          <Text style={styles.txtDefault}>{this.state._output}</Text>
+          {/* <Text style={styles.txtDefault}>{this.state._output}</Text> */}
         </View>
       </View>
       <View style={styles.containerButtons}>
-        <NumberButtons onBtnPress={this._handleEvent} buttons={buttons} />
+        <NumberButtons />
       </View>
     </View>
   );
