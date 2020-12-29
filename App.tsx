@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, SafeAreaView } from 'react-native';
 // Styles
 // eslint-disable-next-line import/extensions
 import styles from './app/styles';
@@ -13,7 +13,7 @@ import HistoryView from './app/components/HistoryView';
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.containerHistory}>
         {/* <HistoryView data={this.state._history} onClear={this._clearHistory} /> */}
       </View>
@@ -25,6 +25,6 @@ export default function App() {
       <View style={styles.containerButtons}>
         <NumberButtons />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
