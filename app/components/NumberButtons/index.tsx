@@ -20,20 +20,21 @@ function index(props: ButtonsProps): JSX.Element {
   // };
 
   const _handleOnPress = (value: string) => {
-    requestAnimationFrame(() => {
-      // props.onBtnPress(value);
-    });
+    console.log(value)
+    // requestAnimationFrame(() => {
+    //   // props.onBtnPress(value);
+    // });
   };
 
   return (
     <View style={styles.container}>
-      {props.buttons.map((row, xindex) => (
-        <View key={xindex+'row'} style={styles.containerRow}>
-          {row.map((col, rindex) => (
+      {props.buttons.map((row, rindex) => (
+        <View key={rindex+'row'} style={styles.containerRow}>
+          {row.map((col, cindex) => (
             <TouchableNativeFeedback
-              key={rindex+'col'}
+              key={cindex+'col'}
               onPress={() => _handleOnPress(col)}
-              background={TouchableNativeFeedback.Ripple('#0f0', true)}
+              background={TouchableNativeFeedback.Ripple('#AAF', true)}
             >
               <View style={styles.containerButton}>
                 <Text style={styles.txtDefalut}>{col}</Text>
