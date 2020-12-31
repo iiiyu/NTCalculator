@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingRight: 20,
   },
-  txtDefalut: {
+  txtDefault: {
     color: '#fff',
     fontFamily: 'Helvetica-Light',
     fontSize: 30,

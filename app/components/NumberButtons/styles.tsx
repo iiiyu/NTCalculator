@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
   },
-  txtDefalut: {
+  txtDefault: {
     color: '#000',
     fontFamily: 'Helvetica-Light',
     fontSize: 20,
