@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, SafeAreaView, Button } from 'react-native';
-import { ButtonData } from './app/components/NumberButtons'
+import { ButtonData, ButtonType } from './app/components/NumberButtons'
 
 // Styles
 // eslint-disable-next-line import/extensions
@@ -26,10 +26,49 @@ export default function App() {
 
   const [output, SetOutput] = useState('0')
 
-  const handleOnPress = function (value:ButtonData) {
+  const initOutput = () => {
+    SetOutput(initialOutput)
+  }
+
+  const replaceLastIndex = (value:string) => {
+    var str1 = output.replace(/.$/,value)
+    SetOutput(str1)
+  }
+
+  const handleOnPress =  (value:ButtonData) => {
     console.log(value.name)
     SetOutput(value.name)
+    switch(value.type) {
+      case ButtonType.Clear:{
+        initOutput()
+        break
+      }
+      case ButtonType.Delete: {
+        if (output.length === 1) {
+          initOutput()
+        } else {
+          replaceLastIndex('')
+        }
+        break
+      }
+      case ButtonType.Equals: {
+        break
+      }
+      default:
+        // let strLastChar = output.slice(-1);
+        // if(isNaN(strLastChar)){
+        //   replaceLastIndex(value.name)
+        // }
+        // else{
+        //   concatToOutput(value);
+        // }
+        concatToOutput(value);
+        console.log('default')
+        break
+    }
   }
+
+
 
   const concatToOutput = (value:ButtonData) => {
     if(output.length>=maxLength){
