@@ -12,19 +12,13 @@ import styles from './styles';
 
 interface ButtonsProps {
   buttons: string[][];
+  handleOnPress (value:string): void;
 }
 
 function index(props: ButtonsProps): JSX.Element {
   // const shouldComponentUpdate = (_nextProps, _nextState) => {
   //   return false;
   // };
-
-  const _handleOnPress = (value: string) => {
-    console.log(value)
-    // requestAnimationFrame(() => {
-    //   // props.onBtnPress(value);
-    // });
-  };
 
   return (
     <View style={styles.container}>
@@ -33,7 +27,7 @@ function index(props: ButtonsProps): JSX.Element {
           {row.map((col, cindex) => (
             <TouchableNativeFeedback
               key={cindex+'col'}
-              onPress={() => _handleOnPress(col)}
+              onPress={() => props.handleOnPress(col)}
               background={TouchableNativeFeedback.Ripple('#AAF', true)}
             >
               <View style={styles.containerButton}>
@@ -50,10 +44,10 @@ function index(props: ButtonsProps): JSX.Element {
 index.defaultProps = {
   buttons: [
     ['CLEAR', 'DEL'],
-    ['7', '8', '9', '/'],
-    ['4', '5', '6', '*'],
-    ['1', '2', '3', '+'],
-    ['.', '0', '=', '-'],
+    ['7', '8', '9', '÷'],
+    ['4', '5', '6', 'x'],
+    ['1', '2', '3', '-'],
+    ['.', '0', '=', '+'],
   ],
 };
 
