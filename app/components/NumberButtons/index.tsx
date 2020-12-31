@@ -149,7 +149,7 @@ index.defaultProps = {
       },
       {
         name: '=',
-        type: ButtonType.Symbols,
+        type: ButtonType.Equals,
         size: 1,
       },
     ],
