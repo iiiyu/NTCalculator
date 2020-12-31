@@ -1,27 +1,28 @@
-import React from 'react';
-import { View, Text, TouchableNativeFeedback } from 'react-native';
+/* eslint-disable react/no-array-index-key */
+import React from 'react'
+import { View, Text, TouchableNativeFeedback } from 'react-native'
 
 // eslint-disable-next-line import/extensions
-import styles from './styles';
+import styles from './styles'
 
-
+// eslint-disable-next-line no-shadow
 export enum ButtonType {
   Clear = 'CLEAR',
   Delete = 'DELETE',
   Symbols = 'SYMBOLS',
   Numbers = 'NUMBERS',
-  Equals = 'EQUALS'
+  Equals = 'EQUALS',
 }
 
-export interface ButtonData  {
-  name:string;
-  type:ButtonType;
-  size:number;
+export interface ButtonData {
+  name: string
+  type: ButtonType
+  size: number
 }
 
 interface ButtonsProps {
-  handleOnPress (value:ButtonData): void;
-  buttons: ButtonData[][];
+  handleOnPress(value: ButtonData): void
+  buttons: ButtonData[][]
 }
 
 function index(props: ButtonsProps): JSX.Element {
@@ -32,14 +33,14 @@ function index(props: ButtonsProps): JSX.Element {
   return (
     <View style={styles.container}>
       {props.buttons.map((row, rindex) => (
-        <View key={rindex+'row'} style={styles.containerRow}>
+        <View key={`${rindex}row`} style={styles.containerRow}>
           {row.map((col, cindex) => (
             <TouchableNativeFeedback
-              key={cindex+'col'}
+              key={`${cindex}col`}
               onPress={() => props.handleOnPress(col)}
               background={TouchableNativeFeedback.Ripple('#AAF', true)}
             >
-              <View style={[styles.containerButton, {flex:col.size}]}>
+              <View style={[styles.containerButton, { flex: col.size }]}>
                 <Text style={styles.txtDefault}>{col.name}</Text>
               </View>
             </TouchableNativeFeedback>
@@ -47,112 +48,112 @@ function index(props: ButtonsProps): JSX.Element {
         </View>
       ))}
     </View>
-  );
+  )
 }
 
 index.defaultProps = {
   buttons: [
     [
       {
-        name:'CLEAR',
-        type:ButtonType.Clear,
-        size:2
+        name: 'CLEAR',
+        type: ButtonType.Clear,
+        size: 2,
       },
       {
-        name:'DEL',
-        type:ButtonType.Delete,
-        size:1
+        name: 'DEL',
+        type: ButtonType.Delete,
+        size: 1,
       },
       {
-        name:'÷',
-        type:ButtonType.Symbols,
-        size:1
-      }
+        name: '÷',
+        type: ButtonType.Symbols,
+        size: 1,
+      },
     ],
     [
       {
-        name:'7',
-        type:ButtonType.Numbers,
-        size:1
+        name: '7',
+        type: ButtonType.Numbers,
+        size: 1,
       },
       {
-        name:'8',
-        type:ButtonType.Numbers,
-        size:1
+        name: '8',
+        type: ButtonType.Numbers,
+        size: 1,
       },
       {
-        name:'8',
-        type:ButtonType.Numbers,
-        size:1
+        name: '8',
+        type: ButtonType.Numbers,
+        size: 1,
       },
       {
-        name:'x',
-        type:ButtonType.Symbols,
-        size:1
-      }
+        name: 'x',
+        type: ButtonType.Symbols,
+        size: 1,
+      },
     ],
     [
       {
-        name:'4',
-        type:ButtonType.Numbers,
-        size:1
+        name: '4',
+        type: ButtonType.Numbers,
+        size: 1,
       },
       {
-        name:'5',
-        type:ButtonType.Numbers,
-        size:1
+        name: '5',
+        type: ButtonType.Numbers,
+        size: 1,
       },
       {
-        name:'6',
-        type:ButtonType.Numbers,
-        size:1
+        name: '6',
+        type: ButtonType.Numbers,
+        size: 1,
       },
       {
-        name:'-',
-        type:ButtonType.Symbols,
-        size:1
-      }
+        name: '-',
+        type: ButtonType.Symbols,
+        size: 1,
+      },
     ],
     [
       {
-        name:'1',
-        type:ButtonType.Numbers,
-        size:1
+        name: '1',
+        type: ButtonType.Numbers,
+        size: 1,
       },
       {
-        name:'2',
-        type:ButtonType.Numbers,
-        size:1
+        name: '2',
+        type: ButtonType.Numbers,
+        size: 1,
       },
       {
-        name:'3',
-        type:ButtonType.Numbers,
-        size:1
+        name: '3',
+        type: ButtonType.Numbers,
+        size: 1,
       },
       {
-        name:'+',
-        type:ButtonType.Symbols,
-        size:1
-      }
+        name: '+',
+        type: ButtonType.Symbols,
+        size: 1,
+      },
     ],
     [
       {
-        name:'0',
-        type:ButtonType.Numbers,
-        size:2
+        name: '0',
+        type: ButtonType.Numbers,
+        size: 2,
       },
       {
-        name:'.',
-        type:ButtonType.Symbols,
-        size:1
+        name: '.',
+        type: ButtonType.Symbols,
+        size: 1,
       },
       {
-        name:'=',
-        type:ButtonType.Symbols,
-        size:1
-      }
-    ]
-  ]
-};
+        name: '=',
+        type: ButtonType.Symbols,
+        size: 1,
+      },
+    ],
+  ],
+}
 
-export default index;
+export default index

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   clearCont: {
@@ -76,6 +76,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica-Light',
     fontSize: 15,
   },
-});
+})
 
-export default styles;
+export default styles

@@ -1,25 +1,25 @@
-import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import React from 'react'
+import { View, Text, ScrollView } from 'react-native'
 
 // eslint-disable-next-line import/extensions
-import styles from './styles';
+import styles from './styles'
 
 interface HistoryProp {
-  a: string;
-  data: string[];
+  a: string
+  data: string[]
 }
 
 function index(props: HistoryProp): JSX.Element {
   const _onClear = () => {
-    console.log('click clear');
-  };
+    console.log('click clear')
+  }
 
   const bEmpty = (): boolean => {
     if (props.data.length === 0) {
-      return true;
+      return true
     }
-    return false;
-  };
+    return false
+  }
 
   return (
     <View style={styles.container}>
@@ -49,7 +49,7 @@ function index(props: HistoryProp): JSX.Element {
         </View>
       )}
     </View>
-  );
+  )
 }
 
-export default index;
+export default index
